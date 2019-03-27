@@ -1,0 +1,13 @@
+.body{
+background-color: blue;
+}
+
+.Box{
+  margin: auto;
+  left: 10000;
+padding: 0
+}
+
+.modal-content{
+  background-color: blue;
+}
