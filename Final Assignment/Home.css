@@ -1,0 +1,16 @@
+.body{
+background-color: blue;
+}
+
+#bar{
+  background-color: #101F84;
+}
+
+a {
+color: red;
+}
+
+#Logo{
+  margin-top: -3rem;
+  height: 100px;
+}
