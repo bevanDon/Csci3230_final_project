@@ -1,6 +1,6 @@
 $.support.cors = true;
 $(document).ready(function() {
-    var schedule_results= $("schedule_results");
+    var results= $("#results");
     var scores;
     $("#results").hide();
     $("#schedule").click(function() {
@@ -8,7 +8,7 @@ $(document).ready(function() {
         $("#results").show();
         
         
-        $.getJSON("scores.json", function(response) {
+        $.getJSON("https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json", function(response) {
             scores = response["rounds"];
             
             
@@ -24,7 +24,8 @@ $(document).ready(function() {
                 content.append("<p>" + this["team1"]["code"]  + this["score1"] +
                 this["score2"]  + this["team2"]["code"] + "<br>"
                 + "</p>")
-                schedule_results.append(content);
+                div.append(content);
+                results.append(div);
 
                 })
             })
