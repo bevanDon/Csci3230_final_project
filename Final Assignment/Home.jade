@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="mainpage.js"></script>
+  <link rel="stylesheet" type="text/css" href="Home.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  </head>
+ 
+
+<body>
+
+<nav class = "navbar navbar-inverse" id="bar">
+  <div class = "container-fluid">
+    <div class = "navbar-header">
+      <a class="navbar-brand" href="#"> <img src="Logo.png" alt="logo soccer" id = "Logo"></a>
+      </div>
+      <ul class = "nav navbar-nav">
+  <li><a href="#"  id="Info">Info</a></li>
+  <li><a  id ="schedule" role="button" href="#">Schedule</a></li>
+  <li>
+  <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in" id="login"></span> Login</a></li>
+    </ul>
+    <li>
+      </ul>
+  </div>
+  
+</nav>
+<video autoplay muted loop id="myVideo">
+  <source src="BackgroundVideo.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div id="results" class="results">
+</div>
+  </body>
+  </html>
