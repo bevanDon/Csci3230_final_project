@@ -7,20 +7,20 @@ html
     title Home
     script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
     script(type='text/javascript', src='mainpage.js')
-    link(rel='stylesheet', type='text/css', href='Reg.css')
+    link(rel='stylesheet', type='text/css', href='styles/Reg.css')
     link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
   .container.register-form(background='images/RegBackground.jpg')
-    .form
+    form(action='/Reg',method='post')
       .note
         h1 Please Enter Account details
       .form-content
         .row
           .col-md-6
             .form-group
-              input#Name.form-control(type='text', placeholder='Your Name *', value='')
+              input#Name.form-control( type='text', placeholder='Your Name *', value='')
             .form-group
               input#Email.form-control(type='text', placeholder='Email *', value='')
           .col-md-6
             .form-group
               input#Password.form-control(type='text', placeholder='Your Password *', value='')
-        button.btnSubmit(type='button') Submit
+        button.btn.btn-primary(type='submit') Submit
