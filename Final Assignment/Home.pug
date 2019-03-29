@@ -1,0 +1,40 @@
+Hom
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Home
+    script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
+    script(type='text/javascript', src='mainpage.js')
+    link(rel='stylesheet', type='text/css', href='styles/Home.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    style.
+      body { background-color:  #102C52; }
+  body
+    nav#bar.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='#')
+            img#Logo(src='Logo.png', alt='logo soccer')
+        ul.nav.navbar-nav
+          li
+            a#Info(href='#') Info
+          li
+            a#schedule(role='button', href='#') Schedule
+          li
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='#')
+                  span.glyphicon.glyphicon-user
+                  |  Sign Up
+              li
+                a(href='#')
+                  span#login.glyphicon.glyphicon-log-in
+                  |  Login
+          li
+    video#myVideo(autoplay='', muted='', loop='')
+      source(src='BackgroundVideo.mp4', type='video/mp4')
+      |   Your browser does not support HTML5 video.
+    #results.results

@@ -50,7 +50,7 @@ var Schema = mongoose.Schema;
 
 var registrationSchema = new Schema({
   Firstname:String,
-  Email:{type:String, unique:true }, 
+  Email:{type:String, unique:true },
   Password:String
 
 }, {
@@ -65,6 +65,25 @@ app.get('/', function(request, response) {
    response.render('main', {
       title: 'main',
       description: 'This is the main page',
+      username: username
+   });
+});
+
+app.get('/Home', function(request, response) {
+   username = request.session.username;
+   response.render('Home', {
+      title: 'Home',
+      description: 'This is the main page',
+      username: username
+   });
+});
+
+
+app.get('/Reg', function(request, response) {
+   username = request.session.username;
+   response.render('Reg', {
+      title: 'registration',
+      description: 'This is the registration',
       username: username
    });
 });
@@ -84,7 +103,7 @@ app.post('/',function(request,response){
 
     users.find({Email:email, Password:password}).then(function(results){
         if(results.length > 0){
-           
+
             //email found. check password
             //DO SOMETHING
         }
@@ -109,7 +128,7 @@ app.get('reg',function(request,response){
   var  Name= request.body.name;
   var email = request.body.email;
   var password = request.body.password;
-  
+
 
   var login_data = {
    Name: Name,
@@ -117,7 +136,7 @@ app.get('reg',function(request,response){
    password:password};
    reg.find({email: email}).then(function(results) {
       if (results.length > 0) {
-   
+
         reg.update({Name:Name},
                        login_data,
                        {multi: false},

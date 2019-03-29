@@ -1,24 +1,26 @@
 doctype html
-  meta(charset='UTF-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible', content='ie=edge')
-  title Home
-  script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
-  script(type='text/javascript', src='mainpage.js')
-  link(rel='stylesheet', type='text/css', href='Reg.css')
-  link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
-.container.register-form(background='RegBackground.jpg')
-  .form
-    .note
-      h1 Please Enter Account details
-    .form-content
-      .row
-        .col-md-6
-          .form-group
-            input.form-control(id = "name",type='text', placeholder='Your Name *', value='')
-          .form-group
-            input.form-control(id="email",type='text', placeholder='Email *', value='')
-        .col-md-6
-          .form-group
-            input.form-control(id = "password",type='text', placeholder='Your Password *', value='')
-      button.btnSubmit(type='button') Submit
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Home
+    script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
+    script(type='text/javascript', src='mainpage.js')
+    link(rel='stylesheet', type='text/css', href='Reg.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+  .container.register-form(background='images/RegBackground.jpg')
+    .form
+      .note
+        h1 Please Enter Account details
+      .form-content
+        .row
+          .col-md-6
+            .form-group
+              input#Name.form-control(type='text', placeholder='Your Name *', value='')
+            .form-group
+              input#Email.form-control(type='text', placeholder='Email *', value='')
+          .col-md-6
+            .form-group
+              input#Password.form-control(type='text', placeholder='Your Password *', value='')
+        button.btnSubmit(type='button') Submit
