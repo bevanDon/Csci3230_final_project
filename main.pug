@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Login
+    script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
+    script(type='text/javascript', src='Login.js')
+    link(rel='stylesheet', type='text/css', href='styles/style.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    title SoccerVision
+  body(background='images/background.png')
+    .box
+      img.avi(src='images/soccerball.png')
+      h1 Soccer Vision
+      form(action='/Home', method='post')
+        p Username
+        input(id = 'username',type='text', name='username', placeholder='Enter Username')
+        p Password
+        input(id='password',type='password', name='password', placeholder='Enter Password')
+        button.btn.btn-primary(type='submit') Submit
+        br
+        a.regpage(href='/Reg')  Click here to Register
