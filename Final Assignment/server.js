@@ -86,6 +86,9 @@ app.get('/Home', function(request, response) {
 });
 
 
+
+
+
 app.get('/Reg', function(request, response) {
    username = request.session.username;
    response.render('Reg', {
@@ -107,6 +110,7 @@ app.post('/Reg', function(request,response){
 
 });
 
+
 function userExists(toFind){
 	var exists = false;
 
@@ -119,6 +123,9 @@ function userExists(toFind){
 }
 
 app.post('TeamSelect',function(request,response){
+    response.render('Home',{
+        title: 'Home'
+     });
 
 });
 

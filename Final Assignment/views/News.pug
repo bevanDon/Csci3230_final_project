@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Home
+    script(type='text/javascript', src='https://code.jquery.com/jquery-latest.min.js')
+    script(type='text/javascript', src='mainpage.js')
+    link(rel='stylesheet', type='text/css', href='News.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+  body
+    nav#bar.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='#')
+            img#Logo(src='Logo.png', alt='logo soccer')
+        ul.nav.navbar-nav
+          li
+            a#Info(href='#') Info
+          li
+            a#schedule(role='button', href='#') Schedule
+          li
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='#')
+                  span.glyphicon.glyphicon-user
+                  |  Sign Up
+              li
+                a(href='#')
+                  span#login.glyphicon.glyphicon-log-in
+                  |  Login
+          li
+    .col-sm-2
+      iframe(src='http://www.espn.com/soccer/transfers', height='1000px')
+        | <p>Your browser does not support iframes.</p>
+    .col-md-5(style='left: 100px;')
+      h1 Lingard to Barcelona
+      p Sky Sports
+      blockquote
+        p
+          | With Neymar's desire to leave Barcelona partly motivated by a feeling that he is not as appreciated as Messi, it is also believed that the Argentine is concerned that a potential move for Lingard may see him lose his 'golden boy' status with Barca's board and supporters.
+        footer Leon Chow:
+    .col-md-6(style='left: 100px; ')
+      h1 Ronaldo heading home
+      p
+      blockquote
+        p
+          | "He even told me '99 percent, Cristiano Ronaldo will come,'" Evra later recalled. "I was like, 'Wow, we are ready to bounce back and to even win the Champions League again."
+        footer Di Mazrio:
+    .col-md-7(style='left: 100px; ')
+      h1 Messi Finally leaving Barcelona
+      p
+      blockquote
+        p
+          | The 31-year-old Argentine is under contract with Barcelona until the end of the 2020-21 season  and he’s previously indicated he’d like to finish his career there. But the Daily Mail said executives at several MLS clubs were convinced David Beckham’s Inter would look to land Messi.
+        footer Tim Woodington:
