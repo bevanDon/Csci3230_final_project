@@ -7,6 +7,13 @@ var uuid = require('uuid/v1');
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
+
+// web listener
+app.set('port', process.env.PORT || 3000);
+app.listen(app.get('port'), function() {
+   console.log('Server listening on port ' + app.get('port'));
+});
+
 // database config
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost:27017/db', {
@@ -83,9 +90,36 @@ app.get('/Reg', function(request, response) {
    username = request.session.username;
    response.render('Reg', {
       title: 'registration',
-      description: 'This is the registration',
-      username: username
+      description: 'This is the registration'
    });
+});
+
+app.post('/Reg', function(request,response){
+   console.log("running");
+   var newa = new users({Firstname:"a",Email:"a@a.a",Password:"a"});
+   newa.save(function (err) {
+      if (err) return handleError(err);
+      // saved!
+   });
+   response.render('TeamSelect',{
+      title: 'Team Select'
+   });
+
+});
+
+function userExists(toFind){
+	var exists = false;
+
+	for(var i = 0; i < email.length; i++){
+		if(email[i] === toFind){
+			return true;
+		}
+	}
+   return false;
+}
+
+app.post('TeamSelect',function(request,response){
+
 });
 
 app.post('/',function(request,response){
@@ -112,60 +146,4 @@ app.post('/',function(request,response){
             //RETURN AN ERROR MESSAGE
         }
     });
-});
-function reloadUserList(request, response, errorMessage) {
-   Student.find().then(function(results) {
-     response.render('reg', {title: 'users List',
-                                  reg: results,
-                                  errorMessage: errorMessage});
-   });
- }
-
-app.get('reg',function(request,response){
-  var newa = new users({Firstname:"a",Email:"a@a.a",Password:"a"});
-  var exists = 0;
-  db.collection
-  var  Name= request.body.name;
-  var email = request.body.email;
-  var password = request.body.password;
-
-
-  var login_data = {
-   Name: Name,
-   email: email,
-   password:password};
-   reg.find({email: email}).then(function(results) {
-      if (results.length > 0) {
-
-        reg.update({Name:Name},
-                       login_data,
-                       {multi: false},
-                       function(error, numAffected) {
-          if (error || numAffected != 1) {
-            console.log('Unable to update account: ' + error);
-            reloadStudentList(request, response, 'Unable to update account');
-          } else {
-            reloadStudentList(request, response, 'account updated');
-          }
-        });
-      } else {
-        // save a new user
-        var newUser = new users(login_data);
-        newUser.save(function(error) {
-          if (error) {
-            console.log('Unable to save student');
-            reloadUserList(request, response, 'Unable to add account');
-          } else {
-            reloadUserList(request, response, 'account added');
-          }
-        });
-      }
-    });
-
-});
-
-// web listener
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'), function() {
-   console.log('Server listening on port ' + app.get('port'));
 });
