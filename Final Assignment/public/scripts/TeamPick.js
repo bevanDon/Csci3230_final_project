@@ -1,4 +1,3 @@
-// Increments the delay on each item.
 $('.rolldown-list li').each(function () {
   var delay = ($(this).index() / 4) + 's';
   $(this).css({

@@ -15,10 +15,10 @@ html(lang='en')
       img.avi(src='images/soccerball.png')
       h1 Soccer Vision
       form(action='main',method='post')
-        p Username
-        input(type='text', name='name', placeholder='Enter Username')
-        p Password
-        input#password(type='password', name='password', placeholder='Enter Password')
+        form-user
+          input(id = 'user' type="text" name="user" placeholder="Email")
+        form-password
+          input(id = 'pass' type="text" name="pass" placeholder="Password")
         button.btn.btn-primary(type='submit', href='/Home') Log In
         br
       form(action='main2',method='post')

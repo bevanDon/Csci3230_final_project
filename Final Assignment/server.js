@@ -30,7 +30,7 @@ mongoose.set('useCreateIndex', true);
 // middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
-   extended: false
+   extended: true
 }));
 
 // configure the templating engine
@@ -68,7 +68,7 @@ var users = mongoose.model('reg', registrationSchema);
 // routes
 
 app.get('/', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('main', {
       title: 'main',
       description: 'This is the main page',
@@ -78,7 +78,7 @@ app.get('/', function(request, response) {
 
 
 app.get('/main', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('main', {
       title: 'main',
       description: 'This is the main page',
@@ -87,14 +87,30 @@ app.get('/main', function(request, response) {
 });
 
 app.post('/main',function(request,response){
-   response.render('Home',{
-      title:'Home'
-   });
+   name= request.body.user;
+   password = request.body.pass;
+   console.log(name,password);
+   if(name == "" || password == ""){
+      //give error message
+   }
+   else{users.find()
+      users.find({Email:name, Password:password}).then(function(results){
+         if(results.length > 0){
+            response.render('Home',{
+               title:'Home'
+            });
+            console.log("found");
+         }
+         else{
+            console.log("notfound");
+         }  
+     });
+   }
 });
 
 
 app.get('/main2', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('main', {
       title: 'main'
    });
@@ -108,7 +124,7 @@ app.post('/main2',function(request,response){
 });
 
 app.get('/Home', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('Home', {
       title: 'Home',
       description: 'This is the main page',
@@ -118,7 +134,7 @@ app.get('/Home', function(request, response) {
 
 
 app.get('/News', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('News', {
       title: 'News',
       description: 'This is the News',
@@ -127,9 +143,9 @@ app.get('/News', function(request, response) {
 });
 
 app.get('/Reg', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('Reg', {
-      title: 'registration',
+      title: 'registratrion',
       description: 'This is the registration'
    });
 });
@@ -137,7 +153,7 @@ app.get('/Reg', function(request, response) {
 
 
 app.get('/TeamSelect', function(request, response) {
-   username = request.session.username;
+   username = request.bodyusername;
    response.render('TeamSelect', {
       title: 'Select',
       description: 'This is the Team Select'
@@ -146,7 +162,13 @@ app.get('/TeamSelect', function(request, response) {
 
 app.post('/Reg', function(request,response){
    console.log("running");
-   var newa = new users({Firstname:"a",Email:"a@a.a",Password:"a"});
+   name = request.body.name;
+   email = request.body.email;
+   pass = request.body.password;
+   console.log(name,email,pass);
+   var newa = new users({Firstname:name,Email:email,Password:pass});
+
+   
    newa.save(function (err) {
       if (err) return Error(err);
       // saved!
@@ -155,7 +177,7 @@ app.post('/Reg', function(request,response){
       title: 'Team Select'
    });
    console.log("running reg");
-});
+}); 
 
 
 function userExists(toFind){

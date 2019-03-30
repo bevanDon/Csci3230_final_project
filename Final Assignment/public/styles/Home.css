@@ -1,9 +1,11 @@
 #results{
+  text-align: center;
 }
 
 .result_data{
   background-color: lightblue;
   right:50px;
+    text-align: center;
 }
 #bar{
   background-color: #102C52;
@@ -11,7 +13,9 @@
   border-width: 0;
   box-shadow: none;
 }
-
+p{
+  font-size: 100px;
+}
 
 
 #myVideo {
