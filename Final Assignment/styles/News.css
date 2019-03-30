@@ -1,0 +1,24 @@
+#results{
+}
+
+#body{
+  background-color: lightblue;
+}
+
+#bar{
+  background-color: #102C52;
+  opacity: 0.90;
+  border-width: 0;
+  box-shadow: none;
+}
+
+
+a {
+color: red;
+}
+
+#Logo{
+  margin-top: -3rem;
+  height: 70px;
+  width: 70px;
+}

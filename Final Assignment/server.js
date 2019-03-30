@@ -117,11 +117,30 @@ app.get('/Home', function(request, response) {
 });
 
 
+app.get('/News', function(request, response) {
+   username = request.session.username;
+   response.render('News', {
+      title: 'News',
+      description: 'This is the News',
+      username: username
+   });
+});
+
 app.get('/Reg', function(request, response) {
    username = request.session.username;
    response.render('Reg', {
       title: 'registration',
       description: 'This is the registration'
+   });
+});
+
+
+
+app.get('/TeamSelect', function(request, response) {
+   username = request.session.username;
+   response.render('TeamSelect', {
+      title: 'Select',
+      description: 'This is the Team Select'
    });
 });
 

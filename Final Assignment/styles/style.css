@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.box{
+    background: black;
+    color: gray;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.avi{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+}
+
+
+.box p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.box input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button
+{
+    height: 40px;
+    background: blue;
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
