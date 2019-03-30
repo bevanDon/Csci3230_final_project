@@ -17,10 +17,10 @@ html
         .row
           .col-md-6
             .form-group
-              input#Name.form-control( type='text', placeholder='Your Name *', value='')
+              input#Name.form-control( name='name',type='text', placeholder='Your Name *', value='')
             .form-group
-              input#Email.form-control(type='text', placeholder='Email *', value='')
+              input#Email.form-control(name='Email',type='text', placeholder='Email *', value='')
           .col-md-6
             .form-group
-              input#Password.form-control(type='text', placeholder='Your Password *', value='')
-        button.btn.btn-primary(type='submit') Submit
+              input#Password.form-control(name='password',type='text', placeholder='Your Password *', value='')
+        button.btn.btn-primary(type='submit', href='/TeamSelect') Register

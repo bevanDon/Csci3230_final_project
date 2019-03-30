@@ -76,6 +76,37 @@ app.get('/', function(request, response) {
    });
 });
 
+
+app.get('/main', function(request, response) {
+   username = request.session.username;
+   response.render('main', {
+      title: 'main',
+      description: 'This is the main page',
+      username: username
+   });
+});
+
+app.post('/main',function(request,response){
+   response.render('Home',{
+      title:'Home'
+   });
+});
+
+
+app.get('/main2', function(request, response) {
+   username = request.session.username;
+   response.render('main', {
+      title: 'main'
+   });
+});
+
+app.post('/main2',function(request,response){
+   response.render('Reg',{
+      title:'Register'
+   });
+   console.log("running");
+});
+
 app.get('/Home', function(request, response) {
    username = request.session.username;
    response.render('Home', {
@@ -84,9 +115,6 @@ app.get('/Home', function(request, response) {
       username: username
    });
 });
-
-
-
 
 
 app.get('/Reg', function(request, response) {
@@ -101,13 +129,13 @@ app.post('/Reg', function(request,response){
    console.log("running");
    var newa = new users({Firstname:"a",Email:"a@a.a",Password:"a"});
    newa.save(function (err) {
-      if (err) return handleError(err);
+      if (err) return Error(err);
       // saved!
    });
    response.render('TeamSelect',{
       title: 'Team Select'
    });
-
+   console.log("running reg");
 });
 
 
