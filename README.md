@@ -1,6 +1,6 @@
 # Csci3230_final_project
-## Samatar mumin and Bevan Donbosco
-## 100618701 100637553
+### Samatar mumin and Bevan Donbosco
+100618701 100637553
 
 # Running
 1.Git clone Repository
