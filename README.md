@@ -6,5 +6,6 @@
 ### 1.Git clone Repository
 ### 2. npm install
 ### 3.nodemon server.js
-### 4. Type localhost:3000
-### 5. Use email to enter in as username
+### 4. Run with mongod
+### 5. Type localhost:3000
+### 6. Use email to enter in as username
