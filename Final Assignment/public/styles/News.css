@@ -1,8 +1,13 @@
-#results{
-}
+
 
 #body{
   background-color: lightblue;
+  background-image: url("images/newsBackground.jpg");
+}
+
+body{
+  background-image: url("images/newsBackground.jpg");
+
 }
 
 #bar{

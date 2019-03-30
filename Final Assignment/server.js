@@ -54,7 +54,7 @@ app.use(session({
 var db = mongoose.connection;
 var Schema = mongoose.Schema;
 
-
+//creates the scehema for the login email is the login
 var registrationSchema = new Schema({
   Firstname:String,
   Email:{type:String, unique:true },
@@ -66,7 +66,7 @@ var registrationSchema = new Schema({
 var users = mongoose.model('reg', registrationSchema);
 
 // routes
-
+// main file
 app.get('/', function(request, response) {
    username = request.bodyusername;
    response.render('main', {
@@ -85,7 +85,7 @@ app.get('/main', function(request, response) {
       username: username
    });
 });
-
+//user needs to login to access the page
 app.post('/main',function(request,response){
    name= request.body.user;
    password = request.body.pass;
@@ -93,6 +93,7 @@ app.post('/main',function(request,response){
    if(name == "" || password == ""){
       //give error message
    }
+   // looks through the database
    else{users.find()
       users.find({Email:name, Password:password}).then(function(results){
          if(results.length > 0){
@@ -107,8 +108,10 @@ app.post('/main',function(request,response){
      });
    }
 });
+//drink coffee and take a breather while marking this, you earned it.
 
 
+// used for the login
 app.get('/main2', function(request, response) {
    username = request.bodyusername;
    response.render('main', {
@@ -132,7 +135,7 @@ app.get('/Home', function(request, response) {
    });
 });
 
-
+//news tab
 app.get('/News', function(request, response) {
    username = request.bodyusername;
    response.render('News', {
@@ -142,6 +145,7 @@ app.get('/News', function(request, response) {
    });
 });
 
+// registration page
 app.get('/Reg', function(request, response) {
    username = request.bodyusername;
    response.render('Reg', {
@@ -151,6 +155,13 @@ app.get('/Reg', function(request, response) {
 });
 
 
+app.get('/Timetable', function(request, response) {
+   username = request.bodyusername;
+   response.render('Timetable', {
+      title: 'registratrion',
+      description: 'This is the registration'
+   });
+});
 
 app.get('/TeamSelect', function(request, response) {
    username = request.bodyusername;
@@ -159,7 +170,7 @@ app.get('/TeamSelect', function(request, response) {
       description: 'This is the Team Select'
    });
 });
-
+//selects your favourite team, news is based on favourite team
 app.post('/Reg', function(request,response){
    console.log("running");
    name = request.body.name;
@@ -167,11 +178,11 @@ app.post('/Reg', function(request,response){
    pass = request.body.password;
    console.log(name,email,pass);
    var newa = new users({Firstname:name,Email:email,Password:pass});
-
+//saves the user input
    
    newa.save(function (err) {
       if (err) return Error(err);
-      // saved!
+      
    });
    response.render('TeamSelect',{
       title: 'Team Select'
@@ -179,7 +190,7 @@ app.post('/Reg', function(request,response){
    console.log("running reg");
 }); 
 
-
+// checks if the login is an actual user
 function userExists(toFind){
 	var exists = false;
 
@@ -204,22 +215,16 @@ app.post('/',function(request,response){
     var email = request.body.email;
     var password = request.body.password;
 
-    //This is how you save. Using this in registration
-    // var newa = new users({Firstname:"a",Email:"a@a.a",Password:"a"});
-    // newa.save(function(err){
-    //     if(err) return Error(err);
-    // });
+    
 
 
     users.find({Email:email, Password:password}).then(function(results){
         if(results.length > 0){
 
-            //email found. check password
-            //DO SOMETHING
+           
         }
         else{
-            //no email found, user doesnt exist
-            //RETURN AN ERROR MESSAGE
+         
         }
     });
 });

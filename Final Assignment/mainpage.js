@@ -1,17 +1,19 @@
 $.support.cors = true;
 $(document).ready(function() {
+
+    //going to dynam put html into the scehdule page
     var results= $("#results");
     var scores;
     $("#results").hide();
     $("#schedule").click(function() {
         $("#myVideo").hide();
         $("#results").show();
-        
+        // get the data online
         
         $.getJSON("https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json", function(response) {
             scores = response["rounds"];
             
-            
+            // seperating the data and putting the data on the html page
             $(scores).each(function() {
                 matches = this["matches"];
                 $(matches).each(function() {

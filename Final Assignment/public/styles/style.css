@@ -23,6 +23,13 @@ body{
     position: absolute;
     top: -50px;
 }
+#pass{
+    margin-top: 2rem;
+
+}
+#regis{
+    margin-top:2rem; 
+}
 
 
 .box p{
